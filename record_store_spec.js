@@ -1,5 +1,19 @@
+var imported = require('./record_store');
+var Record = imported.recordConstructor;
 
-// Create a constructor to create Record objects with artist, title, price
+var chai = require('chai');
+var assert = chai.assert;
+var expect = chai.expect;
+
+describe('Record', function(){
+  // Create a constructor to create Record objects with artist, title, price
+  it('should have artist, title and price', function(){
+    var newRecord = new Record('jesse & joy', 'electricidad', 7.99);
+    assert.equal('jesse & joy', newRecord.artist);
+    assert.equal('electricidad', newRecord.title);
+    assert.equal(7.99, newRecord.price);
+  });
+});
 
 // Create a few records
 
