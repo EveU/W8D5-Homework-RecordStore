@@ -39,9 +39,13 @@ describe('Record Store', function(){
     assert.equal(record1, newRecordStore.inventory[0]);
     assert.equal(4, newRecordStore.inventory.length);
   });
+  // Give the RecordStore a balance i.e. cash in bank.
+  it('should have a balance', function(){
+    var newRecordStore = new RecordStore('jsRecords', 'Edinburgh');
+    assert.equal(0, newRecordStore.balance);
+  });
 });
 
-// Give the RecordStore a balance i.e. cash in bank.
 
 // Add some records to your RecordStore.
 
