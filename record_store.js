@@ -6,7 +6,19 @@ var Record = function(artist, title, price){
   this.price = price;
 }
 
+var RecordStore = function(name, city){
+  this.name = name;
+  this.city = city;
+  this.inventory = [];
+}
+
+RecordStore.prototype = {
+  addRecordToInventory:function(record){
+    this.inventory.push(record);
+  }
+};
 
 module.exports = {
-  recordConstructor: Record
+  recordConstructor: Record,
+  recordStoreConstructor: RecordStore
 }
