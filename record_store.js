@@ -38,33 +38,7 @@ RecordStore.prototype = {
   }
 }
 
-var Customer = function(name, cash){
-  this.name = name;
-  this.cash = cash;
-  this.records = [];
-}
-
-Customer.prototype = {
-  buyRecord:function(record, store){
-    if(this.cash >= record.price){
-      store.sellRecord;
-      this.records.push(record);
-      this.cash -= record.price;
-    }
-  },
-  sellRecord:function(record, store){
-    if(store.balance >= record.price){
-      var index = this.records.indexOf(record);
-      this.records.splice(index, 1);
-      store.addRecordToInventory;
-      store.balance -= record.price;
-      this.cash += record.price;
-    }
-  }
-}
-
 module.exports = {
   recordConstructor: Record,
-  recordStoreConstructor: RecordStore,
-  customerConstructor: Customer
+  recordStoreConstructor: RecordStore
 }

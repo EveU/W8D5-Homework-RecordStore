@@ -1,7 +1,7 @@
 var imported = require('./record_store');
 var Record = imported.recordConstructor;
 var RecordStore = imported.recordStoreConstructor;
-var Customer = imported.customerConstructor;
+var Customer = require('./customer');
 
 var chai = require('chai');
 var assert = chai.assert;
@@ -83,4 +83,3 @@ describe('Customer', function(){
     assert.closeTo(30.00, 0.1, customer1.cash);
   });
 });
-
