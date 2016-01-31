@@ -1,6 +1,7 @@
 var imported = require('./record_store');
 var Record = imported.recordConstructor;
 var RecordStore = imported.recordStoreConstructor;
+var Customer = imported.customerConstructor;
 
 var chai = require('chai');
 var assert = chai.assert;
@@ -68,3 +69,13 @@ describe('JS Records', function(){
 });
 
 // Create a RecordCollector (or customer) constructor who can buy and sell records.
+var customer1 = new Customer('Allan', 30.00);
+
+describe('Customer', function(){
+  it('should be able to buy records', function(){
+    customer1.buyRecord(record4, jsRecords);
+    assert.equal(1, customer1.records.length);
+    assert.closeTo(20.01, 0.1, customer1.cash);
+  });
+});
+

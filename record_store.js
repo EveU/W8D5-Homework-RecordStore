@@ -36,9 +36,26 @@ RecordStore.prototype = {
     }
     return this.inventoryValue;
   }
-};
+}
+
+var Customer = function(name, cash){
+  this.name = name;
+  this.cash = cash;
+  this.records = [];
+}
+
+Customer.prototype = {
+  buyRecord:function(record, store){
+    if(this.cash >= record.price){
+      store.sellRecord;
+      this.records.push(record);
+      this.cash -= record.price;
+    }
+  },
+}
 
 module.exports = {
   recordConstructor: Record,
-  recordStoreConstructor: RecordStore
+  recordStoreConstructor: RecordStore,
+  customerConstructor: Customer
 }
