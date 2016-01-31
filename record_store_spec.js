@@ -54,9 +54,14 @@ describe('JS Records', function(){
   it('should be able to list the inventory', function(){
     assert.equal(record1, jsRecords.listInventory());
   });
+  // Create a method so that the RecordStore can sell a record. Adjust the cash in bank to take into account the price of the record sold
+  it('should be able to sell a record', function(){
+    jsRecords.sellRecord(record2);
+    assert.equal(3, jsRecords.inventory.length);
+    assert.equal(9.99, jsRecords.balance);
+  });
 });
 
-// Create a method so that the RecordStore can sell a record. Adjust the cash in bank to take into account the price of the record sold
 
 // Create a method that reports on the financial situation of the store. Cash and value of inventory.
 

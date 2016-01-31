@@ -22,6 +22,11 @@ RecordStore.prototype = {
       console.log(record.artist + " | " + record.title + " | " + record.price);
     }
     return this.inventory[0];
+  },
+  sellRecord:function(record){
+    var index = this.inventory.indexOf(record);
+    this.inventory.splice(index, 1);
+    this.balance += record.price;
   }
 };
 
