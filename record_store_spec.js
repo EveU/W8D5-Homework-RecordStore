@@ -16,6 +16,11 @@ describe('Record', function(){
 });
 
 // Create a few records
+var newRecord = new Record('jesse & joy', 'electricidad', 7.99);
+var newRecord = new Record('jesse & joy', '¿con quién se queda el perro?', 9.99);
+var newRecord = new Record('ásgeir trausti', 'dýrð í dauðaþögn', 9.99);
+var newRecord = new Record('csemer boglárka', 'boggie', 8.99);
+
 
 // Create a RecordStore that has a name, city and multiple records in it's inventory
 
