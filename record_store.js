@@ -16,6 +16,12 @@ var RecordStore = function(name, city){
 RecordStore.prototype = {
   addRecordToInventory:function(record){
     this.inventory.push(record);
+  },
+  listInventory:function(){
+    for(record of this.inventory){
+      console.log(record.artist + " | " + record.title + " | " + record.price);
+    }
+    return this.inventory[0];
   }
 };
 

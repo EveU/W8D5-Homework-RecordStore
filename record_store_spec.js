@@ -22,7 +22,6 @@ var record2 = new Record('jesse & joy', '¿con quién se queda el perro?', 9.99)
 var record3 = new Record('ásgeir trausti', 'dýrð í dauðaþögn', 9.99);
 var record4 = new Record('csemer boglárka', 'boggie', 8.99);
 
-
 // Create a RecordStore that has a name, city and multiple records in it's inventory
 describe('Record Store', function(){
   it('should have a name and city', function(){
@@ -46,10 +45,16 @@ describe('Record Store', function(){
   });
 });
 
-
 // Add some records to your RecordStore.
+var jsRecords = new RecordStore('jsRecords', 'Edinburgh');
+jsRecords.inventory = [record1, record2, record3, record4];
 
 // Create a method that lists the inventory.
+describe('JS Records', function(){
+  it('should be able to list the inventory', function(){
+    assert.equal(record1, jsRecords.listInventory());
+  });
+});
 
 // Create a method so that the RecordStore can sell a record. Adjust the cash in bank to take into account the price of the record sold
 
