@@ -11,6 +11,7 @@ var RecordStore = function(name, city){
   this.city = city;
   this.inventory = [];
   this.balance = 0;
+  this.inventoryValue = 0;
 }
 
 RecordStore.prototype = {
@@ -27,6 +28,13 @@ RecordStore.prototype = {
     var index = this.inventory.indexOf(record);
     this.inventory.splice(index, 1);
     this.balance += record.price;
+    this.calculateInventoryValue();
+  },
+  calculateInventoryValue:function(){
+    for(record of this.inventory){
+      this.inventoryValue += record.price;
+    }
+    return this.inventoryValue;
   }
 };
 

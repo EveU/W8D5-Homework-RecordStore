@@ -60,9 +60,11 @@ describe('JS Records', function(){
     assert.equal(3, jsRecords.inventory.length);
     assert.equal(9.99, jsRecords.balance);
   });
+  // Create a method that reports on the financial situation of the store. Cash and value of inventory.
+  it('should keep track of the cash balance and inventory value', function(){
+    assert.equal(9.99, jsRecords.balance);
+    assert.equal(26.97, jsRecords.inventoryValue);
+  });
 });
-
-
-// Create a method that reports on the financial situation of the store. Cash and value of inventory.
 
 // Create a RecordCollector (or customer) constructor who can buy and sell records.
