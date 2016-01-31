@@ -77,5 +77,10 @@ describe('Customer', function(){
     assert.equal(1, customer1.records.length);
     assert.closeTo(20.01, 0.1, customer1.cash);
   });
+  it('should be able to sell records', function(){
+    customer1.sellRecord(record4, jsRecords);
+    assert.equal(0, customer1.records.length);
+    assert.closeTo(30.00, 0.1, customer1.cash);
+  });
 });
 

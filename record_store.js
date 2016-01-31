@@ -52,6 +52,15 @@ Customer.prototype = {
       this.cash -= record.price;
     }
   },
+  sellRecord:function(record, store){
+    if(store.balance >= record.price){
+      var index = this.records.indexOf(record);
+      this.records.splice(index, 1);
+      store.addRecordToInventory;
+      store.balance -= record.price;
+      this.cash += record.price;
+    }
+  }
 }
 
 module.exports = {
